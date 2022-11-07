@@ -1,22 +1,30 @@
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
+import { 
+    Card, 
+    Button,
+    Image
+} from 'react-bootstrap'
 
-
-import image from '../../img/ayynomarico2.gif'
+import gif from '../../img/ayynomarico2.gif'
+import gif2 from '../../img/ayynomarico4.gif'
 import './Header.css'
 
 function Header() {
     return (
-        <div className='header-card'>
+        <div className='header-profile'>
             <Card >
-                <Card.Img variant="top" src={image}/>
-                <Card.Body>
-                    <Card.Title>Title</Card.Title>
-                    <Card.Text>
-                        xD
-                    </Card.Text>
-                    <Button variant='primary'>XD</Button>
-                </Card.Body>
+                <div className='image-container'>
+                    <Card.Img className='box image-banner' variant="top" src={gif}/>
+                    <Image className='box image-profile' src={gif2} roundedCircle></Image>
+                </div>
+                <div className='body-profile'>
+                    <Card.Body >
+                        <Card.Title>Title</Card.Title>
+                        <Card.Text>
+                            xD
+                        </Card.Text>
+                        <Button variant='primary'>XD</Button>
+                    </Card.Body>
+                </div>
             </Card>
         </div> 
      );

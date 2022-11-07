@@ -1,3 +1,25 @@
-.header-card{
-    width: 18rem;
+.header-profile{
+    width: 100%;
+    
+}
+
+.image-container{
+    position: relative;
+}
+
+.image-banner{
+    height: 200px;  
+}
+
+.image-profile{
+    top: 95px;
+    left: 10px;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 1;
+}
+
+.body-profile{
+    margin-top: 30px;
 }

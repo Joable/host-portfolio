@@ -1,0 +1,13 @@
+.center{
+    margin:auto;
+    width: 50%;
+    height: 100%;
+}
+
+.center .card{
+    margin-bottom: 10px;
+}
+
+.nav{
+    padding: 0px;
+}
