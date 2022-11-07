@@ -1,6 +1,6 @@
 import { 
     Card, 
-    Button,
+    Nav,
     Image
 } from 'react-bootstrap'
 
@@ -11,20 +11,39 @@ import './Header.css'
 function Header() {
     return (
         <div className='header-profile'>
-            <Card >
+            <Card id = "header-card">
+
                 <div className='image-container'>
+
                     <Card.Img className='box image-banner' variant="top" src={gif}/>
                     <Image className='box image-profile' src={gif2} roundedCircle></Image>
+
                 </div>
                 <div className='body-profile'>
                     <Card.Body >
-                        <Card.Title>Title</Card.Title>
+
+                        <Card.Title>Joaquin Elias Altable</Card.Title>
+                        <Card.Subtitle>Front End Web Developer</Card.Subtitle>
+                        
                         <Card.Text>
-                            xD
+                            Capital Federal, Buenos Aires (Argentina) 
                         </Card.Text>
-                        <Button variant='primary'>XD</Button>
+                        <Card.Text>
+                            Información de contacto
+                        </Card.Text>
+                        
                     </Card.Body>
                 </div>
+
+                    <Nav className='justify-content-center' variant='tabs' defaultActiveKey='/'>
+                        <Nav.Item>
+                            <Nav.Link href='/'>Datos</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link href='#'>Proyectos</Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+
             </Card>
         </div> 
      );
