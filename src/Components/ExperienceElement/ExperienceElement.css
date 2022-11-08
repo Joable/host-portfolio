@@ -1,0 +1,11 @@
+/* Style exp-element-container */
+.exp-element-container{
+    display: flex;
+}
+
+/* Style exp-element-image */
+
+/* Style exp-element-text */
+.exp-element-text p{
+    margin: 0;
+}
