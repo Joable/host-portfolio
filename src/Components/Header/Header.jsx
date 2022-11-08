@@ -3,6 +3,7 @@ import {
     Nav,
     Image
 } from 'react-bootstrap'
+import { BsPencilSquare } from 'react-icons/bs'
 
 import gif from '../../img/ayynomarico2.gif'
 import gif2 from '../../img/ayynomarico4.gif'
@@ -22,7 +23,10 @@ function Header() {
                 <div className='body-profile'>
                     <Card.Body >
 
-                        <Card.Title>Joaquin Elias Altable</Card.Title>
+                        <div className="justify-spacebetween">
+                            <Card.Title>Joaquin Elias Altable</Card.Title>
+                            <BsPencilSquare/>
+                        </div>
                         <Card.Subtitle>Front End Web Developer</Card.Subtitle>
                         
                         <Card.Text>

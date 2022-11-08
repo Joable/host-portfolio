@@ -2,7 +2,6 @@ import { Card } from "react-bootstrap";
 import { BsPlusLg } from 'react-icons/bs'
 import ExperienceElement from "../ExperienceElement/ExperienceElement.jsx";
 
-import './Experience.css'
 
 function Experience() {
     return ( 

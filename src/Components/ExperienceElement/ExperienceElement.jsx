@@ -10,7 +10,7 @@ function ExperienceElement() {
                 <FaUniversity size={ 80 }/>
             </div>
             <div className="exp-element-text">
-                <div className='text-position'>
+                <div className='justify-spacebetween'>
                     <h5>Placeholder position</h5>
                     <BsPencilSquare/>
                 </div>

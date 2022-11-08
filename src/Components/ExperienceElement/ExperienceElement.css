@@ -13,9 +13,3 @@
 .exp-element-text p{
     margin: 0;
 }
-
-.text-position{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
