@@ -1,15 +1,27 @@
 import { Card } from "react-bootstrap";
+import { BsPlusLg } from 'react-icons/bs'
 import ExperienceElement from "../ExperienceElement/ExperienceElement.jsx";
 
+import './Experience.css'
 
 function Experience() {
     return ( 
         <Card>
             <Card.Body>
-                <Card.Title>Experiencia</Card.Title>
-                <ExperienceElement/>
-                <Card.Title>Educación</Card.Title>
-                <ExperienceElement/>
+                <div className="experience">
+                    <div className="justify-spacebetween">
+                        <Card.Title>Experiencia</Card.Title>
+                        <BsPlusLg/>
+                    </div>
+                    <ExperienceElement/>
+                </div>
+                <div className="education">
+                    <div className="justify-spacebetween">
+                        <Card.Title>Educación</Card.Title>
+                        <BsPlusLg/>
+                    </div>
+                    <ExperienceElement/>
+                </div>
             </Card.Body>
         </Card>
      );
