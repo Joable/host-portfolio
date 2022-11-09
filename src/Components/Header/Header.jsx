@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { 
     Card, 
     Nav,
@@ -8,15 +8,31 @@ import {
 } from 'react-bootstrap'
 import { BsPencilSquare } from 'react-icons/bs'
 
+import firebase from '../../Config/firebase.js'
+
 import gif from '../../img/ayynomarico2.gif'
 import gif2 from '../../img/ayynomarico4.gif'
 import './Header.css'
 
 function Header() {
-    const [form, setForm] = useState({name:'Joaquin Elias Altable', ocupation:'Front End Web Developer', location:'Capital Federal, Buenos Aires (Argentina)'})
+    const [form, setForm] = useState({name:'', ocupation:'', location:''})
     const [formChange, setFormChange] = useState(form)
 
     const [show, setShow] = useState(false)
+
+    useEffect(() =>{
+        firebase.db.doc("profile-data/header-data")
+        .get()
+        .then( doc => {
+            setForm(doc.data())
+            setFormChange(form)
+        })
+    }, []
+    )
+
+    useEffect(() =>{
+        console.log("Component updated")
+    },[form])
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true)
@@ -24,7 +40,14 @@ function Header() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        setForm(formChange);
+        firebase.db.doc("profile-data/header-data")
+        .set({
+            name: formChange.name,
+            ocupation: formChange.ocupation,
+            location: formChange.location
+        })
+
+        setForm(formChange)
 
         handleClose();
     }
@@ -34,7 +57,6 @@ function Header() {
         const value = target.value;
         const name = target.name;
 
-        console.log(value)
         setFormChange({
             ...formChange,
             [name] : value
@@ -82,7 +104,7 @@ function Header() {
 
             </Card>
         </div>
-        
+
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
                 <h3>Edit Profile</h3>
@@ -93,17 +115,17 @@ function Header() {
                         <h3>
                             Name:
                         </h3>
-                        <input name='name' type='text' value={formChange.name} onChange={handleChange}/>
+                        <input key={form.name} name='name' type='text' value={formChange.name} onChange={handleChange}/>
 
                         <h3>
                             Ocupation:
                         </h3>
-                        <input name='ocupation' type='text' value={formChange.ocupation} onChange={handleChange}/>
+                        <input key={form.ocupation} name='ocupation' type='text' value={formChange.ocupation} onChange={handleChange}/>
 
                         <h3>
                             Location:
                         </h3>
-                        <input name='location' type='text' value={formChange.location} onChange={handleChange}/>
+                        <input key={form.location} name='location' type='text' value={formChange.location} onChange={handleChange}/>
                     </div>
 
                     <div className='header-form-button'>
