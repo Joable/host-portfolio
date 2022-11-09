@@ -82,6 +82,7 @@ function Header() {
 
             </Card>
         </div>
+        
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
                 <h3>Edit Profile</h3>
