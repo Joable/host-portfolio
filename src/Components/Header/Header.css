@@ -36,3 +36,8 @@
     z-index: 1;
 }
 
+/* Styles header-form */
+
+.header-form input{
+    width: 100%;
+}

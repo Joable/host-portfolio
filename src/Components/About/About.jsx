@@ -27,8 +27,6 @@ function About() {
         handleClose()
     }
 
-
-
     return (
         <>
         <Card>
