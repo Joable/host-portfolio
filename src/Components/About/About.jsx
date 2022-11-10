@@ -1,15 +1,33 @@
-import { useState } from "react";
-import { Button, Card, Modal } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { 
+    Button, 
+    Card, 
+    Modal,
+    Placeholder
+ } from "react-bootstrap";
 import { BsPencilSquare } from 'react-icons/bs'
+
+import firebase from "../../Config/firebase.js";
 
 import './About.css'
 
 function About() {
-    const [aboutText, setAboutText] = useState(
-        "Soy desarrollador de software, con inglés avanzado, muy motivado, siempre con ganas de aprender y mejorar mis habilidades.Tengo experiencia trabajando de manera freelance con :JavaScript, TypeScript, HTML, CSS, Bootstrap, React js, SQL, Angular.Python, C, C++."
-    );
+    const [isLoading, setIsLoading] = useState(true)
+    const [aboutText, setAboutText] = useState("");
     const [aboutTextChange, setAboutTextChange] = useState(aboutText)
+
     const [show, setShow] = useState(false);
+
+    useEffect(() =>{
+        firebase.db.doc("profile-data/about-data")
+        .get()
+        .then( doc => {
+            setAboutText(doc.data().about)
+            setAboutTextChange(aboutText)
+            setIsLoading(false)
+        })
+    }, []
+    )
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
@@ -27,36 +45,59 @@ function About() {
         handleClose()
     }
 
-    return (
+    if(isLoading){
+        return(
         <>
         <Card>
             <Card.Body>
-
-                <div className="justify-spacebetween">
-                    <Card.Title>Acerca de mi</Card.Title>
-                    <BsPencilSquare onClick={handleShow}/>
-                </div>
+                <Card.Title>
+                    <Placeholder as={Card.Title} animation='glow'>
+                        <Placeholder xs={4}/>
+                    </Placeholder>
+                </Card.Title>
                 <Card.Text>
-                    {aboutText}
+                    <Placeholder as={Card.Text} animation="glow">
+                        <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{' '}
+                        <Placeholder xs={6} /> <Placeholder xs={8} />
+                    </Placeholder>            
                 </Card.Text>
-                
             </Card.Body>
         </Card>
-        <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <h3>
-                    Acerca de mi
-                </h3>
-            </Modal.Header>
-            <Modal.Body>
-                <form onSubmit={handleSubmit}>    
-                    <textarea name="about" id="about-input" onChange={handleChange}>{aboutTextChange}</textarea>
-                    <Button type="submit">Save Changes</Button>
-                </form>
-            </Modal.Body>
-        </Modal>
-        </> 
-     );
+        </>
+        )
+    }else{
+        return (
+            <>
+            <Card>
+                <Card.Body>
+
+                    <div className="justify-spacebetween">
+                        <Card.Title>Acerca de mi</Card.Title>
+                        <BsPencilSquare onClick={handleShow}/>
+                    </div>
+                    <Card.Text>
+                        {aboutText}
+                    </Card.Text>
+                    
+                </Card.Body>
+            </Card>
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <h3>
+                        About
+                    </h3>
+                </Modal.Header>
+                <Modal.Body>
+                    <form onSubmit={handleSubmit}>    
+                        <textarea name="about" id="about-input" onChange={handleChange}>{aboutTextChange}</textarea>
+                        <Button type="submit">Save Changes</Button>
+                    </form>
+                </Modal.Body>
+            </Modal>
+            </> 
+        );
+    }
 }
 
 export default About;

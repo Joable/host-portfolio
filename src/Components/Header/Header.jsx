@@ -30,10 +30,6 @@ function Header() {
     }, []
     )
 
-    useEffect(() =>{
-        console.log("Component updated")
-    },[form])
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true)
 
