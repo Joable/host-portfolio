@@ -4,15 +4,17 @@ import {
     Nav,
     Image,
     Modal,
-    Button
+    Button,
+    Form
 } from 'react-bootstrap'
 import { BsPencilSquare } from 'react-icons/bs'
 
 import HeaderLoading from './HeaderLoading.jsx'
-import firebase from '../../Config/firebase.js'
+import {getData} from '../../Services/getData'
+import firebase from "../../Config/firebase"
 
-import gif from '../../img/ayynomarico2.gif'
-import gif2 from '../../img/ayynomarico4.gif'
+import gif from '../../img/ayynomarico3.gif'
+import gif2 from '../../img/dudeguy-grid.jpg'
 import './Header.css'
 
 function Header() {
@@ -24,15 +26,20 @@ function Header() {
     const [show, setShow] = useState(false)
 
     useEffect(() =>{
-        firebase.db.doc("profile-data/header-data")
-        .get()
-        .then( doc => {
-            setForm(doc.data())
-            setFormChange(form)
-            setIsLoading(false)
-        })
-    }, []
-    )
+        const  response = async () => {
+            try{
+                const responseData = await getData("header-data")
+
+                setForm(responseData.data())
+                setFormChange(responseData.data())
+
+                setIsLoading(false)
+            }catch(error){
+                console.log(error)
+            }
+        }
+        response()
+    }, [])
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true)
@@ -142,28 +149,28 @@ function Header() {
                     <h3>Edit Profile</h3>
                 </Modal.Header>
                 <Modal.Body>
-                    <form onSubmit={handleSubmit}>
-                        <div className="header-form">
-                            <h3>
-                                Name:
-                            </h3>
-                            <input key={form.name} name='name' type='text' value={formChange.name} onChange={handleChange}/>
+                    <Form onSubmit={handleSubmit}>
+                        <div className="header-form-body">
+                            <Form.Group>
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control value={formChange.name} type='text' name='name' onChange={handleChange}/>
+                            </Form.Group>
 
-                            <h3>
-                                Ocupation:
-                            </h3>
-                            <input key={form.ocupation} name='ocupation' type='text' value={formChange.ocupation} onChange={handleChange}/>
+                            <Form.Group>
+                                <Form.Label>Ocupation</Form.Label>
+                                <Form.Control value={formChange.ocupation} type='text' name='ocupation' onChange={handleChange}/>
+                            </Form.Group>
 
-                            <h3>
-                                Location:
-                            </h3>
-                            <input key={form.location} name='location' type='text' value={formChange.location} onChange={handleChange}/>
+                            <Form.Group>
+                                <Form.Label>Location</Form.Label>
+                                <Form.Control value={formChange.location} type='text' name='location' onChange={handleChange}/>
+                            </Form.Group>
                         </div>
 
                         <div className='header-form-button'>
                             <Button type='submit'>Save Changes</Button>
                         </div>
-                    </form>
+                    </Form>
                 </Modal.Body>
             </Modal> 
             </>

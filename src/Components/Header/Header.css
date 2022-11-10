@@ -36,8 +36,8 @@
     z-index: 1;
 }
 
-/* Styles header-form */
+/* Style header-form-button */
 
-.header-form input{
-    width: 100%;
+.header-form-button{
+    margin-top: 10px;
 }

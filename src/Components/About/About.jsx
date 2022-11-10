@@ -2,32 +2,39 @@ import { useEffect, useState } from "react";
 import { 
     Button, 
     Card, 
-    Modal
+    Modal,
+    Form
  } from "react-bootstrap";
 import { BsPencilSquare } from 'react-icons/bs'
 
 import AboutLoading from "./AboutLoading.jsx";
-import firebase from "../../Config/firebase.js";
+import { getData } from "../../Services/getData.js";
+import firebase from "../../Config/firebase"
 
 import './About.css'
 
 function About() {
     const [isLoading, setIsLoading] = useState(true)
     const [aboutText, setAboutText] = useState("");
-    const [aboutTextChange, setAboutTextChange] = useState(aboutText)
+    const [aboutTextChange, setAboutTextChange] = useState("")
 
     const [show, setShow] = useState(false);
 
     useEffect(() =>{
-        firebase.db.doc("profile-data/about-data")
-        .get()
-        .then( doc => {
-            setAboutText(doc.data().about)
-            setAboutTextChange(aboutText)
-            setIsLoading(false)
-        })
-    }, []
-    )
+        const result = async () => {
+            try{
+                const responseData = await getData("about-data")
+
+                setAboutText(responseData.data().about)
+                setAboutTextChange(responseData.data().about)
+
+                setIsLoading(false)
+            }catch(error){
+                console.log(error)
+            }
+        }
+        result()
+    }, [])
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
@@ -41,6 +48,12 @@ function About() {
 
     const handleSubmit = (event) =>{
         event.preventDefault();
+
+        firebase.db.doc("profile-data/about-data")
+        .set({
+            about: aboutTextChange
+        })
+
         setAboutText(aboutTextChange)
         handleClose()
     }
@@ -73,10 +86,10 @@ function About() {
                     </h3>
                 </Modal.Header>
                 <Modal.Body>
-                    <form onSubmit={handleSubmit}>    
-                        <textarea name="about" id="about-input" onChange={handleChange}>{aboutTextChange}</textarea>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Control name="about" as="textarea" id="about-input" onChange={handleChange} value={aboutTextChange}></Form.Control>
                         <Button type="submit">Save Changes</Button>
-                    </form>
+                    </Form>
                 </Modal.Body>
             </Modal>
             </> 
