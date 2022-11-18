@@ -11,8 +11,6 @@ function NavBar() {
                 <div className='nav-elements'>
                     <div className='nav-left'>
                         <BsNavbar.Brand href='/'>Joaquin Altable</BsNavbar.Brand>
-                        <BsNavbar.Text> 
-                        </BsNavbar.Text>
                     </div>
                     <div className="nav-right">
                         <a href='https://www.linkedin.com/in/jealtable'>
