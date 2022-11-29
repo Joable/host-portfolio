@@ -47,7 +47,6 @@ function Header() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        /* CAMBIA ESTO Y HACE UN SERVICIO TE LO PIDO PORFAVOR */
         firebase.db.doc("profile-data/header-data")
         .set({
             name: formChange.name,

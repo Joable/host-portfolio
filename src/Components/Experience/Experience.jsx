@@ -58,7 +58,6 @@ function Experience() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        /* CAMBIA ESTO Y HACE UN SERVICIO TE LO PIDO PORFAVOR */
         firebase.db.collection(`profile-data/${url}`).add({
             position: form.position,
             location: form.location,
@@ -94,20 +93,20 @@ function Experience() {
                 <Form onSubmit={handleSubmit}>
                     <Form.Group>
                         <Form.Label>Position</Form.Label>
-                        <Form.Control type='name' name='position' placeholder='' onChange={handleChange}/>
+                        <Form.Control type='name' name='position' placeholder='Enter position' onChange={handleChange}/>
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Location</Form.Label>
-                        <Form.Control type='name' name='location' placeholder='' onChange={handleChange}/>
+                        <Form.Control type='name' name='location' placeholder='Enter location' onChange={handleChange}/>
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>From</Form.Label>
-                        <Form.Control type='date' name='from' placeholder='' onChange={handleChange}/>
+                        <Form.Control type='date' name='from' onChange={handleChange}/>
                     
                         <Form.Label>To</Form.Label>
-                        <Form.Control type='date' name='to' placeholder='' onChange={handleChange}/>
+                        <Form.Control type='date' name='to' onChange={handleChange}/>
                     </Form.Group>
 
                     <Button type='submit'>Add Experience</Button>
