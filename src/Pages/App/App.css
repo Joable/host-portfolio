@@ -1,7 +1,25 @@
 /* General */
 
+.center{
+  margin:auto;
+  width: 50%;
+  height: 100%;
+}
+
 .justify-spacebetween{
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+hr {
+  margin: 10px !important;
+}
+
+.center .card{
+  margin-bottom: 10px;
+}
+
+.nav{
+  padding: 0px;
 }

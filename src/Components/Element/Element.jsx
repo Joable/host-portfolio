@@ -11,7 +11,6 @@ import {
     MdDesignServices,
     MdEdit
  } from 'react-icons/md'
-import { useNavigate } from "react-router-dom";
 
 import firebase from '../../Config/firebase'
 
@@ -28,7 +27,6 @@ function Element( {element} ) {
     const [show, setShow] = useState(false)
     const [isDeleted, setIsDeleted] = useState(false)
 
-    const navigate = useNavigate("/")
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
@@ -65,7 +63,6 @@ function Element( {element} ) {
         })
 
         handleClose()
-        navigate()
     }
     
     const handleDelete = () => {
@@ -73,6 +70,8 @@ function Element( {element} ) {
 
         firebase.db.doc(`profile-data/experience-data/experience-elements-data/${id}`)
         .delete()
+
+        console.log(id)
 
         setIsDeleted(true)
         handleClose()
