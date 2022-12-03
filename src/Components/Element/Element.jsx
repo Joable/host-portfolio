@@ -9,14 +9,15 @@ import {
 } from "react-bootstrap";
 import { 
     MdDesignServices,
-    MdEdit
+    MdEdit,
+    MdAccountBalance
  } from 'react-icons/md'
 
 import firebase from '../../Config/firebase'
 
 import './Element.css'
 
-function Element( {element} ) {
+function Element( {element, isEducation} ) {
     const [elementData, setElementData] = useState(element.data())
     const [form, setForm] = useState({
         position: elementData.position,
@@ -26,7 +27,11 @@ function Element( {element} ) {
     })
     const [show, setShow] = useState(false)
     const [isDeleted, setIsDeleted] = useState(false)
-
+    let url = isEducation ? "profile-data/education-data/education-data-elements" : "profile-data/experience-data/experience-elements-data" 
+    
+    /*if(isEducation){
+        url = "profile-data/education-data/education-data-elements" 
+    } */ 
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
@@ -47,7 +52,7 @@ function Element( {element} ) {
         
         event.preventDefault();
 
-        firebase.db.doc(`profile-data/experience-data/experience-elements-data/${id}`)
+        firebase.db.doc(`${url}/${id}`)
         .set({
             position: form.position,
             location: form.location,
@@ -68,7 +73,7 @@ function Element( {element} ) {
     const handleDelete = () => {
         const id = element.id
 
-        firebase.db.doc(`profile-data/experience-data/experience-elements-data/${id}`)
+        firebase.db.doc(`${url}/${id}`)
         .delete()
 
         console.log(id)
@@ -79,7 +84,7 @@ function Element( {element} ) {
 
     if(isDeleted){
         return(
-            <></>
+            null
         )
     }else{
         return (
@@ -89,13 +94,13 @@ function Element( {element} ) {
                 <div className="element-body">
 
                     <div className="element-icon">
-                        <MdDesignServices size={40}/>
+                        {isEducation ? <MdAccountBalance size={40}/> : <MdDesignServices size={40}/>}
                     </div>
 
                     <div className="element-data">
                         <Card.Subtitle>{elementData.position}</Card.Subtitle>
                         <Card.Text>{elementData.location}</Card.Text>
-                        <Card.Text>{elementData.from}-{elementData.to}</Card.Text>
+                        <Card.Text>{elementData.from} - {elementData.to}</Card.Text>
                     </div>
 
                 </div>

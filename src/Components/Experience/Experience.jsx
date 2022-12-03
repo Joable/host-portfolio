@@ -13,10 +13,8 @@ import Element from '../Element/Element';
 import { getCollection } from "../../Services/getCollection";
 import { Link } from 'react-router-dom';
 
-function Experience() {
+function Experience( {url, isEducation} ) {
     const [experience, setExperience] = useState([])
-    const url = "experience-data/experience-elements-data"
-    
 
     useEffect(()=>{
         const result = async () =>{
@@ -38,14 +36,14 @@ function Experience() {
                 <div className="experience">
 
                     <div className="justify-spacebetween">
-                        <Card.Title>Experiencia</Card.Title>
-                        <Link to="/add">
+                        <Card.Title>{ isEducation ? "Educacion" : "Experiencia" }</Card.Title>
+                        <Link to={ isEducation ? "/add/education" : "/add/experience" }>
                             <BsPlusLg/>
                         </Link>
                     </div>
 
                     <Stack direction="vertical" gap={3}>
-                        {experience.map(data => <Element element={data}/>)}
+                        {experience.map(data => <Element element={data} isEducation={isEducation}/>)}
                     </Stack>
 
                 </div>

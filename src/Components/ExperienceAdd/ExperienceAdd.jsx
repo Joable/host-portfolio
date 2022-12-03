@@ -4,7 +4,7 @@ import {
     Form,
     Button
 } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import firebase from '../../Config/firebase'
 
 function ExperienceAdd() {
@@ -14,8 +14,13 @@ function ExperienceAdd() {
         from: '',
         to: ''
     })
-    const url = "experience-data/experience-elements-data"
+    const {type} = useParams()
+    let url = "experience-data/experience-elements-data"
     const navigate = useNavigate()
+
+    if(type == "education"){
+        url = "education-data/education-data-elements"
+    }
 
     const handleChange = (event) =>{
         const target = event.target;
