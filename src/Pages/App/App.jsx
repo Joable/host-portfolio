@@ -6,7 +6,7 @@ import {
 
 import Home from "../Home/Home.jsx";
 import NavBar from "../../Components/NavBar/NavBar.jsx";
-import ExperienceAdd from "../../Components/ExperienceAdd/ExperienceAdd.jsx";
+import ExperienceAdd from "../ExperienceAdd/ExperienceAdd.jsx";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';

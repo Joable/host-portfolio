@@ -16,6 +16,7 @@ import firebase from "../../Config/firebase"
 import gif from '../../img/ayynomarico3.gif'
 import gif2 from '../../img/dudeguy-grid.jpg'
 import './Header.css'
+import ContactInfo from '../ContactInfo/ContactInfo.jsx'
 
 function Header() {
     const [isLoading, setIsLoading] = useState(true)
@@ -125,9 +126,7 @@ function Header() {
                             <Card.Text>
                                 {form.location}
                             </Card.Text>
-                            <Card.Text>
-                                Información de contacto
-                            </Card.Text>
+                            <ContactInfo/>
                             
                         </Card.Body>
                     </div>
