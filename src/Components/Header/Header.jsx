@@ -21,7 +21,7 @@ import ContactInfo from '../ContactInfo/ContactInfo.jsx'
 function Header() {
     const [isLoading, setIsLoading] = useState(true)
 
-    const [form, setForm] = useState({name:'', ocupation:'', location:''})
+    const [form, setForm] = useState({name:'', ocupation:'', location:'', telephone:'', email: ''})
     const [formChange, setFormChange] = useState(form)
 
     const [show, setShow] = useState(false)
@@ -52,7 +52,9 @@ function Header() {
         .set({
             name: formChange.name,
             ocupation: formChange.ocupation,
-            location: formChange.location
+            location: formChange.location,
+            telephone: formChange.telephone,
+            email: formChange.email
         })
 
         setForm(formChange)
@@ -126,7 +128,8 @@ function Header() {
                             <Card.Text>
                                 {form.location}
                             </Card.Text>
-                            <ContactInfo/>
+
+                            <ContactInfo telephone={form.telephone} email={form.email}/>
                             
                         </Card.Body>
                     </div>
@@ -163,6 +166,16 @@ function Header() {
                             <Form.Group>
                                 <Form.Label>Location</Form.Label>
                                 <Form.Control value={formChange.location} type='text' name='location' onChange={handleChange}/>
+                            </Form.Group>
+
+                            <Form.Group>
+                                <Form.Label>Telephone</Form.Label>
+                                <Form.Control value={formChange.telephone} type='text' name='telephone' onChange={handleChange}/>
+                            </Form.Group>
+
+                            <Form.Group>
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control value={formChange.email} type='text' name='email' onChange={handleChange}/>
                             </Form.Group>
                         </div>
 
