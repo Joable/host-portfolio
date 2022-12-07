@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { 
     useState,
     useEffect
@@ -6,21 +7,25 @@ import {
     Card,
     Stack
 } from "react-bootstrap";
+
 import { BsPlusLg } from 'react-icons/bs'
 
 import Element from '../Element/Element';
+import ExperienceLoading from './ExperienceLoading';
 
 import { getCollection } from "../../Services/getCollection";
-import { Link } from 'react-router-dom';
+
 
 function Experience( {url, isEducation} ) {
     const [experience, setExperience] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(()=>{
         const result = async () =>{
             try{
                 const response = await getCollection(url);
                 setExperience(response.docs);
+                setIsLoading(false)
             }catch(error){
                 console.log(error);
             }
@@ -29,29 +34,35 @@ function Experience( {url, isEducation} ) {
     },[])
     
 
-    return ( 
-        <Card>
-            <Card.Body>
-                <div>
+    if(isLoading){
+        return(
+            <ExperienceLoading/>
+        )
+    }else{
+        return ( 
+            <Card>
+                <Card.Body>
+                    <div>
 
-                    <div className="justify-spacebetween">
-                        <Card.Title>{ isEducation ? "Educacion" : "Experiencia" }</Card.Title>
+                        <div className="justify-spacebetween">
+                            <Card.Title>{ isEducation ? "Educacion" : "Experiencia" }</Card.Title>
 
-                        <Link to={ isEducation ? "/add/education" : "/add/experience" }>
-                            <BsPlusLg/>
-                        </Link>
+                            <Link to={ isEducation ? "/add/education" : "/add/experience" }>
+                                <BsPlusLg/>
+                            </Link>
+                        </div>
+
+                        <Stack direction="vertical" gap={3}>
+                            {experience.map(data => <Element element={data} isEducation={isEducation}/>)}
+                        </Stack>
+
                     </div>
 
-                    <Stack direction="vertical" gap={3}>
-                        {experience.map(data => <Element element={data} isEducation={isEducation}/>)}
-                    </Stack>
-
-                </div>
-
-                <hr/>
-            </Card.Body>
-        </Card>
-     );
+                    <hr/>
+                </Card.Body>
+            </Card>
+        );
+    }
 }
 
 export default Experience;

@@ -13,6 +13,7 @@ function AboutLoading() {
                         <Placeholder xs={4}/>
                     </Placeholder>
                 </Card.Title>
+                
                 <Card.Text>
                     <Placeholder as={Card.Text} animation="glow">
                         <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{' '}

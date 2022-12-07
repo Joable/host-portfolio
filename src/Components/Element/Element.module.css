@@ -6,3 +6,8 @@
 .elementBody{
     display: flex;
 }
+
+.elementSpinner{
+    margin-top: 22px;
+    margin-right: 5px;
+}
