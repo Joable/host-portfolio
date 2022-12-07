@@ -1,22 +1,26 @@
 import {Navbar as BsNavbar, Button}  from 'react-bootstrap'
 import { BsLinkedin } from "react-icons/bs"
 
-
-import './NavBar.css'
+import styles from './NavBar.module.css'
 
 function NavBar() {
     return (
-        <div className='nav-container'>
+        <div className={styles.navContainer}>
             <BsNavbar bg="dark" variant='dark'>
-                <div className='nav-elements'>
-                    <div className='nav-left'>
-                        <BsNavbar.Brand href='/'>Joaquin Altable</BsNavbar.Brand>
+
+                <div className={styles.navElements}>
+
+                    <div className={styles.navLeft}>
+                        <BsNavbar.Brand href='/'>Porfolio</BsNavbar.Brand>
                     </div>
-                    <div className="nav-right">
+
+                    <div className={styles.navRight}>
                         <a href='https://www.linkedin.com/in/jealtable'>
                             <BsLinkedin size={30}/>
                         </a>
+
                         <Button>Login</Button>
+
                     </div>
                 </div>
             </BsNavbar>

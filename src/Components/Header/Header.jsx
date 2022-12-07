@@ -13,10 +13,12 @@ import HeaderLoading from './HeaderLoading.jsx'
 import {getData} from '../../Services/getData'
 import firebase from "../../Config/firebase"
 
+import ContactInfo from '../ContactInfo/ContactInfo.jsx'
+
+import styles from './Header.module.css'
+
 import gif from '../../img/ayynomarico3.gif'
 import gif2 from '../../img/dudeguy-grid.jpg'
-import './Header.css'
-import ContactInfo from '../ContactInfo/ContactInfo.jsx'
 
 function Header() {
     const [isLoading, setIsLoading] = useState(true)
@@ -76,16 +78,17 @@ function Header() {
     if(isLoading){
         return(
         <>
-        <div className='header-profile'>
-                <Card id = "header-card">
+        <div className={styles.headerProfile}>
+                <Card className={styles.headerCard}>
 
-                    <div className='image-container'>
+                    <div className={styles.imageContainer}>
 
-                        <Card.Img className='box image-banner' variant="top" src={gif}/>
-                        <Image className='box image-profile' src={gif2} roundedCircle></Image>
+                        <Card.Img className={`${styles.box} ${styles.imageBanner}`} variant="top" src={gif}/>
+                        <Image className={`${styles.box} ${styles.imageProfile}`} src={gif2} roundedCircle></Image>
 
                     </div>
-                    <div className='body-profile'>
+
+                    <div className={styles.bodyProfile}>
                         <Card.Body >
                             <HeaderLoading/>
                         </Card.Body>
@@ -95,6 +98,7 @@ function Header() {
                         <Nav.Item>
                             <Nav.Link href='/'>Datos</Nav.Link>
                         </Nav.Item>
+
                         <Nav.Item>
                             <Nav.Link href='#'>Proyectos</Nav.Link>
                         </Nav.Item>
@@ -107,22 +111,27 @@ function Header() {
     }else{
         return (
             <>
-            <div className='header-profile'>
-                <Card id = "header-card">
+            <div className={styles.headerProfile}>
+                <Card className={styles.headerCard}>
 
-                    <div className='image-container'>
+                    <div className={styles.imageContainer}>
 
-                        <Card.Img className='box image-banner' variant="top" src={gif}/>
-                        <Image className='box image-profile' src={gif2} roundedCircle></Image>
+                        <Card.Img className={`${styles.box} ${styles.imageBanner}`} variant="top" src={gif}/>
+                        <Image className={`${styles.box} ${styles.imageProfile}`} src={gif2} roundedCircle></Image>
 
                     </div>
-                    <div className='body-profile'>
+
+                    <div className={styles.bodyProfile}>
                         <Card.Body >
 
                             <div className="justify-spacebetween">
+
                                 <Card.Title>{form.name}</Card.Title>
-                                <BsPencilSquare onClick={handleShow}/>
+
+                                <BsPencilSquare className='edit-button' onClick={handleShow}/>
+
                             </div>
+
                             <Card.Subtitle>{form.ocupation}</Card.Subtitle>
                             
                             <Card.Text>
@@ -138,6 +147,7 @@ function Header() {
                         <Nav.Item>
                             <Nav.Link href='/'>Datos</Nav.Link>
                         </Nav.Item>
+                        
                         <Nav.Item>
                             <Nav.Link href='#'>Proyectos</Nav.Link>
                         </Nav.Item>
@@ -150,9 +160,10 @@ function Header() {
                 <Modal.Header closeButton>
                     <h3>Edit Profile</h3>
                 </Modal.Header>
+
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
-                        <div className="header-form-body">
+                        <div className={styles.headerFormBody}>
                             <Form.Group>
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control value={formChange.name} type='text' name='name' onChange={handleChange}/>
@@ -179,7 +190,7 @@ function Header() {
                             </Form.Group>
                         </div>
 
-                        <div className='header-form-button'>
+                        <div className={styles.headerFormButton}>
                             <Button type='submit'>Save Changes</Button>
                         </div>
                     </Form>

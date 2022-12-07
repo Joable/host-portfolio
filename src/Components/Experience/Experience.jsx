@@ -30,13 +30,13 @@ function Experience( {url, isEducation} ) {
     
 
     return ( 
-        <>
         <Card>
             <Card.Body>
-                <div className="experience">
+                <div>
 
                     <div className="justify-spacebetween">
                         <Card.Title>{ isEducation ? "Educacion" : "Experiencia" }</Card.Title>
+
                         <Link to={ isEducation ? "/add/education" : "/add/experience" }>
                             <BsPlusLg/>
                         </Link>
@@ -47,12 +47,10 @@ function Experience( {url, isEducation} ) {
                     </Stack>
 
                 </div>
+
                 <hr/>
             </Card.Body>
         </Card>
-
-        
-        </>
      );
 }
 

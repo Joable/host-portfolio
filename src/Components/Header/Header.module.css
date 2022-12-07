@@ -1,33 +1,32 @@
 /* Styles header-profile */
-.header-profile{
+.headerProfile{
     width: 100%;
-    
 }
 
 /* Styles header-card */
-#header-card{
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: 0;
+.headerCard {
+    border-bottom-left-radius: 0 !important ;
+    border-bottom-right-radius: 0 !important;
+    border-bottom: 0 !important;
 }
 
 /* Styles body-profile */
-.body-profile{
+.bodyProfile{
     margin-top: 30px;
 }
 
 /* Styles image-container */
-.image-container{
+.imageContainer{
     position: relative;
 }
 
 /* Styles image-banner */
-.image-banner{
+.imageBanner{
     height: 200px;  
 }
 
 /* Styles image-profile */
-.image-profile{
+.imageProfile{
     top: 95px;
     left: 10px;
     width: 150px;
@@ -38,6 +37,6 @@
 
 /* Style header-form-button */
 
-.header-form-button{
+.headerFormButton{
     margin-top: 10px;
 }

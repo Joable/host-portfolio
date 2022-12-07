@@ -1,28 +1,28 @@
 /* Styles nav-container */
-.nav-container{
+.navContainer{
     width: 100%;
     padding: 0;
     margin: 0;
 }
 
 /* Styles nav-elements */
-.nav-elements{
+.navElements{
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 /* Styles nav-left */
-.nav-left{
+.navLeft{
     margin-left: 5px;
 }
 
 /* Styles nav-right */
-.nav-right{
+.navRight{
     margin-right: 5px;
 }
 
-.nav-right a{
+.navRight a{
     color: aliceblue;
     margin-right: 5px;
 }

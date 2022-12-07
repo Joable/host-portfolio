@@ -23,3 +23,13 @@ hr {
 .nav{
   padding: 0px;
 }
+
+.edit-button{
+    color: #0d6efd;
+    cursor: pointer;
+    margin: 0; 
+}
+
+.edit-button:hover {
+  color: #055ada;
+}

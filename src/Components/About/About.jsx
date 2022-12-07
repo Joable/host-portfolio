@@ -11,7 +11,7 @@ import AboutLoading from "./AboutLoading.jsx";
 import { getData } from "../../Services/getData.js";
 import firebase from "../../Config/firebase"
 
-import './About.css'
+import styles from './About.module.css'
 
 function About() {
     const [isLoading, setIsLoading] = useState(true)
@@ -70,7 +70,7 @@ function About() {
 
                     <div className="justify-spacebetween">
                         <Card.Title>Acerca de mi</Card.Title>
-                        <BsPencilSquare onClick={handleShow}/>
+                        <BsPencilSquare className='edit-button' onClick={handleShow}/>
                     </div>
                     <Card.Text>
                         {aboutText}
@@ -81,13 +81,12 @@ function About() {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <h3>
-                        About
-                    </h3>
+                    <h3> About </h3>
                 </Modal.Header>
+
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Control name="about" as="textarea" id="about-input" onChange={handleChange} value={aboutTextChange}></Form.Control>
+                        <Form.Control name="about" as="textarea" className={styles.input} onChange={handleChange} value={aboutTextChange}></Form.Control>
                         <Button type="submit">Save Changes</Button>
                     </Form>
                 </Modal.Body>

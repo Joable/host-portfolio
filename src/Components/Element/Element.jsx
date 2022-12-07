@@ -15,7 +15,7 @@ import {
 
 import firebase from '../../Config/firebase'
 
-import './Element.css'
+import styles from './Element.module.css'
 
 function Element( {element, isEducation} ) {
     const [elementData, setElementData] = useState(element.data())
@@ -29,9 +29,6 @@ function Element( {element, isEducation} ) {
     const [isDeleted, setIsDeleted] = useState(false)
     let url = isEducation ? "profile-data/education-data/education-data-elements" : "profile-data/experience-data/experience-elements-data" 
     
-    /*if(isEducation){
-        url = "profile-data/education-data/education-data-elements" 
-    } */ 
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
@@ -90,23 +87,25 @@ function Element( {element, isEducation} ) {
         return (
             <>
             <hr/>
-            <div className="element">
-                <div className="element-body">
+            <div className={styles.element}>
+                <div className={styles.elementBody}>
 
-                    <div className="element-icon">
+                    <div className={styles.elementIcon}>
                         {isEducation ? <MdAccountBalance size={40}/> : <MdDesignServices size={40}/>}
                     </div>
 
-                    <div className="element-data">
+                    <div className={styles.elementData}>
                         <Card.Subtitle>{elementData.position}</Card.Subtitle>
+                        
                         <Card.Text>{elementData.location}</Card.Text>
+
                         <Card.Text>{elementData.from} - {elementData.to}</Card.Text>
                     </div>
 
                 </div>
 
-                <div className="element-icon">
-                    <MdEdit onClick={handleShow}/>
+                <div className={styles.elementIcon}>
+                    <MdEdit className='edit-button' onClick={handleShow}/>
                 </div>
             </div>
 
