@@ -14,6 +14,7 @@ import {getData} from '../../Services/getData'
 import firebase from "../../Config/firebase"
 
 import ContactInfo from '../ContactInfo/ContactInfo.jsx'
+import HeaderNav from '../HeaderNav/HeaderNav.jsx'
 
 import styles from './Header.module.css'
 
@@ -77,37 +78,10 @@ function Header() {
 
     if(isLoading){
         return(
-        <>
-        <div className={styles.headerProfile}>
-                <Card className={styles.headerCard}>
+            
+            <HeaderLoading/>
 
-                    <div className={styles.imageContainer}>
-
-                        <Card.Img className={`${styles.box} ${styles.imageBanner}`} variant="top" src={gif}/>
-                        <Image className={`${styles.box} ${styles.imageProfile}`} src={gif2} roundedCircle></Image>
-
-                    </div>
-
-                    <div className={styles.bodyProfile}>
-                        <Card.Body >
-                            <HeaderLoading/>
-                        </Card.Body>
-                    </div>
-
-                    <Nav className='justify-content-center' variant='tabs' defaultActiveKey='/'>
-                        <Nav.Item>
-                            <Nav.Link href='/'>Datos</Nav.Link>
-                        </Nav.Item>
-
-                        <Nav.Item>
-                            <Nav.Link href='#'>Proyectos</Nav.Link>
-                        </Nav.Item>
-                    </Nav>
-
-                </Card>
-            </div>
-
-        </>)
+        )
     }else{
         return (
             <>
@@ -143,20 +117,13 @@ function Header() {
                         </Card.Body>
                     </div>
 
-                    <Nav className='justify-content-center' variant='tabs' defaultActiveKey='/'>
-                        <Nav.Item>
-                            <Nav.Link href='/'>Datos</Nav.Link>
-                        </Nav.Item>
-                        
-                        <Nav.Item>
-                            <Nav.Link href='#'>Proyectos</Nav.Link>
-                        </Nav.Item>
-                    </Nav>
+                    <HeaderNav/>
 
                 </Card>
             </div>
 
             <Modal show={show} onHide={handleClose}>
+
                 <Modal.Header closeButton>
                     <h3>Edit Profile</h3>
                 </Modal.Header>
@@ -194,6 +161,7 @@ function Header() {
                             <Button type='submit'>Save Changes</Button>
                         </div>
                     </Form>
+
                 </Modal.Body>
             </Modal> 
             </>
