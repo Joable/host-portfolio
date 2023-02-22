@@ -8,8 +8,6 @@ import {
     Stack
 } from "react-bootstrap";
 
-import { BsPlusLg } from 'react-icons/bs'
-
 import Element from '../Element/Element';
 import ExperienceLoading from './ExperienceLoading';
 
@@ -22,34 +20,44 @@ function Experience( {url, isEducation} ) {
 
     useEffect(()=>{
         const result = async () =>{
+
             try{
+                
                 const response = await getCollection(url);
+
                 setExperience(response.docs);
+
                 setIsLoading(false)
+
             }catch(error){
+
                 console.log(error);
             }
+        
         }
+
         result();
+
     },[])
     
 
     if(isLoading){
         return(
+
             <ExperienceLoading/>
+
         )
     }else{
         return ( 
             <Card>
                 <Card.Body>
+
                     <div>
 
                         <div className="justify-spacebetween">
-                            <Card.Title>{ isEducation ? "Educacion" : "Experiencia" }</Card.Title>
 
-                            <Link to={ isEducation ? "/add/education" : "/add/experience" }>
-                                <BsPlusLg/>
-                            </Link>
+                            <Card.Title>{ isEducation ? "Education" : "Experience" }</Card.Title>
+
                         </div>
 
                         <Stack direction="vertical" gap={3}>
@@ -59,6 +67,7 @@ function Experience( {url, isEducation} ) {
                     </div>
 
                     <hr/>
+
                 </Card.Body>
             </Card>
         );

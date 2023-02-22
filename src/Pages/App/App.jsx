@@ -4,9 +4,10 @@ import {
   Route
 } from "react-router-dom"
 
-import Home from "../Home/Home.jsx";
 import NavBar from "../../Components/NavBar/NavBar.jsx";
-import ExperienceAdd from "../ExperienceAdd/ExperienceAdd.jsx";
+import Header from "../../Components/Header/Header.jsx";
+import ProfileInfo from "../ProfileInfo/ProfileInfo.jsx"
+import Proyects from "../Proyects/Proyects.jsx"
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
@@ -14,15 +15,23 @@ import './App.css';
 function App() {
   return (
     <Router>
+
       <div className="nav">
             <NavBar/>
       </div>
 
+      <div className="center">       
+        <Header/>
+
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        
-        <Route path="/add/:type" element={<ExperienceAdd/>}/>
+
+        <Route path="/" element={<ProfileInfo/>}/>
+        <Route path="/proyects" element={<Proyects/>}/>
+
       </Routes>
+
+      </div>
+      
     </Router>
   );
 }

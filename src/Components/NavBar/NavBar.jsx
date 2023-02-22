@@ -18,10 +18,8 @@ function NavBar() {
                         <a href='https://www.linkedin.com/in/jealtable'>
                             <BsLinkedin size={30}/>
                         </a>
-
-                        <Button>Login</Button>
-
                     </div>
+                    
                 </div>
             </BsNavbar>
         </div>

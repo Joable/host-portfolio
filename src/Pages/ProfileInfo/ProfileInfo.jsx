@@ -1,21 +1,22 @@
 import About from "../../Components/About/About";
 import Experience from "../../Components/Experience/Experience";
-import Header from "../../Components/Header/Header";
 
-function Home() {
+function ProfileInfo() {
     const urlExperience = "experience-data/experience-elements-data"
     const urlEducation = "education-data/education-data-elements"
 
     return (
-        <>       
-        <div className="center">
-            <Header/>
+        <>
+        <div >
+
             <About/>
+
             <Experience url = { urlExperience } isEducation={ false }/>
+
             <Experience url = { urlEducation } isEducation={ true }/>
-        </div> 
-        </>
+        </div>
+        </> 
      );
 }
 
-export default Home;
+export default ProfileInfo;
