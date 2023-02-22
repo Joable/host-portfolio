@@ -1,4 +1,4 @@
-import {Navbar as BsNavbar, Button}  from 'react-bootstrap'
+import { Navbar as BsNavbar }  from 'react-bootstrap'
 import { BsLinkedin } from "react-icons/bs"
 
 import styles from './NavBar.module.css'
@@ -19,7 +19,7 @@ function NavBar() {
                             <BsLinkedin size={30}/>
                         </a>
                     </div>
-                    
+
                 </div>
             </BsNavbar>
         </div>
