@@ -6,7 +6,12 @@ import {
 
 import styles from './Element.module.css'
 
+
+/*FIX THE DIPLAY OF THE ELEMENT */
+
 function Element( {element, isEducation} ) {
+
+    const data = element.data()
 
     return (
             <>
@@ -20,11 +25,11 @@ function Element( {element, isEducation} ) {
                     </div>
 
                     <div className={styles.elementData}>
-                        <Card.Subtitle>{element.position}</Card.Subtitle>
+                        <Card.Subtitle>{data.institution}</Card.Subtitle>
                         
-                        <Card.Text>{element.location}</Card.Text>
+                        <Card.Text>{data.areaOfInterest}</Card.Text>
 
-                        <Card.Text>{element.from} - {element.to}</Card.Text>
+                        <Card.Text>{data.from} - {data.to}</Card.Text>
                     </div>
 
                 </div>

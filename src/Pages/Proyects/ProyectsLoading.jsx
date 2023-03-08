@@ -1,15 +1,16 @@
+
 import { 
     Card, 
     Placeholder,
     Stack
 } from "react-bootstrap";
 
-import ElementLoading from "./ElementLoading";
+import ElementLoading from "../../Components/Experience/ElementLoading";
 
-function ExperienceLoading() {
+function ProyectsLoading() {
 
     const spawnLoadingItems = () => {
-        const quantity = 2
+        const quantity = 0
         const loadingItems = []
   
         for (let i = 0; i <= quantity; i++) {
@@ -43,4 +44,4 @@ function ExperienceLoading() {
 }
 
 
-export default ExperienceLoading;
+export default ProyectsLoading;

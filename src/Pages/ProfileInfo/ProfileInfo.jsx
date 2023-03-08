@@ -2,8 +2,8 @@ import About from "../../Components/About/About";
 import Experience from "../../Components/Experience/Experience";
 
 function ProfileInfo() {
-    const urlExperience = "experience-data/experience-elements-data"
-    const urlEducation = "education-data/education-data-elements"
+    const urlExperience = "experience"
+    const urlEducation = "education"
 
     return (
         <>
@@ -11,9 +11,9 @@ function ProfileInfo() {
 
             <About/>
 
-            <Experience url = { urlExperience } isEducation={ false }/>
-
             <Experience url = { urlEducation } isEducation={ true }/>
+
+            <Experience url = { urlExperience } isEducation={ false }/>
         </div>
         </> 
      );
