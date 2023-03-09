@@ -7,7 +7,6 @@ import {
 import styles from './Element.module.css'
 
 
-/*FIX THE DIPLAY OF THE ELEMENT */
 
 function Element( {element, isEducation} ) {
 
@@ -16,6 +15,7 @@ function Element( {element, isEducation} ) {
     return (
             <>
             <hr/>
+
             <div className={styles.element}>
 
                 <div className={styles.elementBody}>

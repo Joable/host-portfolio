@@ -65,7 +65,9 @@ function Experience( {url, isEducation} ) {
 
                     </div>
 
+                <div style={{ marginTop : '10px' }}>
                     <hr/>
+                </div>
 
                 </Card.Body>
             </Card>

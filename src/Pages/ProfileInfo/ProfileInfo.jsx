@@ -2,7 +2,7 @@ import About from "../../Components/About/About";
 import Experience from "../../Components/Experience/Experience";
 
 function ProfileInfo() {
-    const urlExperience = "experience"
+    const urlExperience = "workExperience"
     const urlEducation = "education"
 
     return (
