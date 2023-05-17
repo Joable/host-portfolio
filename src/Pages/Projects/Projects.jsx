@@ -9,22 +9,22 @@ import {
 
 import { getCollection } from "../../Services/getCollection";
 
-import ProyectElement from "../../Components/ProyectElement/ProyectElement";
-import ProyectsLoading from "./ProyectsLoading";
+import ProjectElement from "../../Components/ProjectElement/ProjectElement";
+import ProjectsLoading from "./ProjectsLoading";
 
-function Proyects() {
-    const [proyects, setProyects] = useState([])
+function Projects() {
+    const [projects, setProjects] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const urlProyects = "proyects"
+    const urlProjects = "proyects"
 
     useEffect(()=>{
         const result = async () =>{
 
             try{
                 
-                const response = await getCollection(urlProyects);
+                const response = await getCollection(urlProjects);
 
-                setProyects(response.docs); 
+                setProjects(response.docs); 
                 setIsLoading(false)
 
             }catch(error){
@@ -40,17 +40,17 @@ function Proyects() {
 
     if (isLoading) {
         return(
-            <ProyectsLoading/>
+            <ProjectsLoading/>
             )
     }else{
         return ( 
             <Card>
             <Card.Body>
 
-                <Card.Title>Proyects</Card.Title>
+                <Card.Title>Projects</Card.Title>
 
                 <Stack direction="vertical" gap={3}>
-                    {proyects.map(data => <ProyectElement proyectData={data.data()}/>)}
+                    {projects.map(data => <ProjectElement projectData={data.data()}/>)}
                 </Stack>
 
                 <hr/>
@@ -61,4 +61,4 @@ function Proyects() {
     }
 }
     
-    export default Proyects;
+    export default Projects;

@@ -8,8 +8,8 @@ import HeaderNav from '../HeaderNav/HeaderNav';
 
 import styles from './Header.module.css'
 
-import gif from '../../img/ayynomarico3.gif'
-import gif2 from '../../img/dudeguy-grid.jpg'
+import bannerImage from '../../img/bannerImage.jpeg'
+import profileImage from '../../img/profileImage.jpg'
 
 function HeaderLoading() {
     return (
@@ -18,8 +18,8 @@ function HeaderLoading() {
 
                             <div className={styles.imageContainer}>
 
-                                <Card.Img className={`${styles.box} ${styles.imageBanner}`} variant="top" src={gif}/>
-                                <Image className={`${styles.box} ${styles.imageProfile}`} src={gif2} roundedCircle></Image>
+                                <Card.Img className={`${styles.box} ${styles.imageBanner}`} variant="top" src={bannerImage}/>
+                                <Image className={`${styles.box} ${styles.imageProfile}`} src={profileImage} roundedCircle></Image>
 
                             </div>
 

@@ -12,8 +12,8 @@ function HeaderNav() {
                 </Nav.Item>
                 
                 <Nav.Item>
-                    <LinkContainer to="/proyects">
-                        <Nav.Link>Proyects</Nav.Link>
+                    <LinkContainer to="/projects">
+                        <Nav.Link>Projects</Nav.Link>
                     </LinkContainer>
                 </Nav.Item>
         

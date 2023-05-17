@@ -7,7 +7,7 @@ import {
 
 import ElementLoading from "../../Components/Experience/ElementLoading";
 
-function ProyectsLoading() {
+function ProjectsLoading() {
 
     const spawnLoadingItems = () => {
         const quantity = 0
@@ -44,4 +44,4 @@ function ProyectsLoading() {
 }
 
 
-export default ProyectsLoading;
+export default ProjectsLoading;
