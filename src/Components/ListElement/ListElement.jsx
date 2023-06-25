@@ -1,10 +1,12 @@
+import styles from './ListElement.module.css'
+
 import { Card } from 'react-bootstrap';
 
 function ListElement({element}) {
     return ( 
         <>
         <hr/>
-        <Card.Body>
+        <Card.Body className={styles.elementBody}>
             <Card.Subtitle>
                 {element.name}
             </Card.Subtitle>
@@ -12,7 +14,7 @@ function ListElement({element}) {
             <Card.Text>
                 {element.description}
             </Card.Text>
-            
+
             <Card.Text>{element.from} - {element.to}</Card.Text>
         </Card.Body>
         </>
