@@ -1,9 +1,8 @@
 import About from "../../Components/About/About";
 import Experience from "../../Components/Experience/Experience";
+import List from "../../Components/List/List";
 
 function ProfileInfo() {
-    const urlExperience = "workExperience"
-    const urlEducation = "education"
 
     return (
         <>
@@ -11,9 +10,7 @@ function ProfileInfo() {
 
             <About/>
 
-            <Experience url = { urlEducation } isEducation={ true }/>
-
-            <Experience url = { urlExperience } isEducation={ false }/>
+            <List url={"education"}/>
         </div>
         </> 
      );
