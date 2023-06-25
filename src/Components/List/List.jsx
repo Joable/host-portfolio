@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 
 import { getCollection } from '../../Services/getCollection';
+
 import ListElement from '../ListElement/ListElement';
 import ListLoading from './ListLoading';
 
-function List({url}) {
+function List({title, url}) {
     const [elements, setElements] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -33,7 +34,7 @@ function List({url}) {
         return ( 
             <Card>
                 <Card.Body>
-                    <Card.Title>Title</Card.Title>
+                    <Card.Title>{title}</Card.Title>
     
                     {elements.map((element) => <ListElement element={element.data()}/>)}
                 </Card.Body>

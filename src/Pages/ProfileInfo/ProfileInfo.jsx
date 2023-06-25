@@ -9,7 +9,7 @@ function ProfileInfo() {
 
             <About/>
 
-            <List url={"education"}/>
+            <List title={"Education"} url={"education"}/>
         </div>
         </> 
      );
