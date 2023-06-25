@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 
 import { getCollection } from '../../Services/getCollection';
+import ListElement from '../ListElement/ListElement';
 
 function List({url}) {
     const [elements, setElements] = useState([]);
@@ -14,7 +15,7 @@ function List({url}) {
 
                 setElements(response.docs);
 
-                elements.map((element) => console.log(element.data()));
+                
             }catch(error){
                 console.log(error);
             }
@@ -27,6 +28,7 @@ function List({url}) {
             <Card.Body>
                 <Card.Title>Title</Card.Title>
 
+                {elements.map((element) => <ListElement element={element.data()}/>)}
             </Card.Body>
         </Card>
     );
