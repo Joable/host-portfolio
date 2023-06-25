@@ -1,13 +1,12 @@
-
 import { 
     Card, 
     Placeholder,
     Spinner
 } from "react-bootstrap";
 
-import styles from '../Element/Element.module.css'
+import styles from '../ListElement/ListElement.module.css'
 
-function ElementLoading() {
+function ListElementLoading() {
     return (
         <>
         <hr/>
@@ -33,4 +32,4 @@ function ElementLoading() {
 }
 
 
-export default ElementLoading;
+export default ListElementLoading;

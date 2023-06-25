@@ -5,7 +5,7 @@ import {
     Stack
 } from "react-bootstrap";
 
-import ElementLoading from "../../Components/Experience/ElementLoading";
+import ListElementLoading from "../../Components/ListElement/ListElementLoading";
 
 function ProjectsLoading() {
 
@@ -14,7 +14,7 @@ function ProjectsLoading() {
         const loadingItems = []
   
         for (let i = 0; i <= quantity; i++) {
-          loadingItems.push(<ElementLoading/>)
+          loadingItems.push(<ListElementLoading/>);
         }
   
         return loadingItems

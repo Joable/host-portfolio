@@ -4,16 +4,16 @@ import {
     Stack
 } from "react-bootstrap";
 
-import ElementLoading from "./ElementLoading";
+import ListElementLoading from "../ListElement/ListElementLoading";
 
-function ExperienceLoading() {
+function ListLoading() {
 
     const spawnLoadingItems = () => {
         const quantity = 2
         const loadingItems = []
   
         for (let i = 0; i <= quantity; i++) {
-          loadingItems.push(<ElementLoading/>)
+          loadingItems.push(<ListElementLoading/>)
         }
   
         return loadingItems
@@ -22,15 +22,11 @@ function ExperienceLoading() {
     return (
         <Card>
             <Card.Body>
-
                         <Card.Title>
-
                             <Placeholder as={Card.Title} animation='glow'>
                                 <Placeholder xs={4}/>
                             </Placeholder>
-
                         </Card.Title>
-
 
                     <Stack direction="vertical" gap={3}>
                             {spawnLoadingItems()}
@@ -43,4 +39,4 @@ function ExperienceLoading() {
 }
 
 
-export default ExperienceLoading;
+export default ListLoading;
