@@ -15,27 +15,21 @@ import ProjectsLoading from "./ProjectsLoading";
 function Projects() {
     const [projects, setProjects] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const urlProjects = "proyects"
+    const url = "proyects"
 
     useEffect(()=>{
         const result = async () =>{
-
             try{
-                
-                const response = await getCollection(urlProjects);
+                const response = await getCollection(url);
 
                 setProjects(response.docs); 
                 setIsLoading(false)
-
             }catch(error){
-
                 console.log(error);
-            }
-        
-        }
-
+            };
+        };
+ 
         result();
-
     },[])
 
     if (isLoading) {
@@ -45,18 +39,16 @@ function Projects() {
     }else{
         return ( 
             <Card>
-            <Card.Body>
+                <Card.Body>
+                    <Card.Title>Projects</Card.Title>
 
-                <Card.Title>Projects</Card.Title>
+                    <Stack direction="vertical" gap={3}>
+                        {projects.map(data => <ProjectElement element={data.data()}/>)}
+                    </Stack>
 
-                <Stack direction="vertical" gap={3}>
-                    {projects.map(data => <ProjectElement projectData={data.data()}/>)}
-                </Stack>
-
-                <hr/>
-
-            </Card.Body>
-        </Card>
+                    <hr/>
+                </Card.Body>
+            </Card>
         );
     }
 }
