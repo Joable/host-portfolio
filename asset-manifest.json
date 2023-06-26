@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Joable/host-portfolio/static/css/main.8f977e40.css",
-    "main.js": "/Joable/host-portfolio/static/js/main.bcb5300e.js",
-    "static/js/787.202b8111.chunk.js": "/Joable/host-portfolio/static/js/787.202b8111.chunk.js",
-    "static/media/profileImage.jpg": "/Joable/host-portfolio/static/media/profileImage.7bb400c337c71abf813a.jpg",
-    "static/media/bannerImage.jpeg": "/Joable/host-portfolio/static/media/bannerImage.576be15c2c9d8d377d65.jpeg",
-    "index.html": "/Joable/host-portfolio/index.html",
-    "main.8f977e40.css.map": "/Joable/host-portfolio/static/css/main.8f977e40.css.map",
-    "main.bcb5300e.js.map": "/Joable/host-portfolio/static/js/main.bcb5300e.js.map",
-    "787.202b8111.chunk.js.map": "/Joable/host-portfolio/static/js/787.202b8111.chunk.js.map"
+    "main.css": "/host-portfolio/static/css/main.8f977e40.css",
+    "main.js": "/host-portfolio/static/js/main.f02fb0a3.js",
+    "static/js/787.202b8111.chunk.js": "/host-portfolio/static/js/787.202b8111.chunk.js",
+    "static/media/profileImage.jpg": "/host-portfolio/static/media/profileImage.7bb400c337c71abf813a.jpg",
+    "static/media/bannerImage.jpeg": "/host-portfolio/static/media/bannerImage.576be15c2c9d8d377d65.jpeg",
+    "index.html": "/host-portfolio/index.html",
+    "main.8f977e40.css.map": "/host-portfolio/static/css/main.8f977e40.css.map",
+    "main.f02fb0a3.js.map": "/host-portfolio/static/js/main.f02fb0a3.js.map",
+    "787.202b8111.chunk.js.map": "/host-portfolio/static/js/787.202b8111.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8f977e40.css",
-    "static/js/main.bcb5300e.js"
+    "static/js/main.f02fb0a3.js"
   ]
 }
