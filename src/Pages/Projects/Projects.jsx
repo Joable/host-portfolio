@@ -42,11 +42,7 @@ function Projects() {
                 <Card.Body>
                     <Card.Title>Projects</Card.Title>
 
-                    <Stack direction="vertical" gap={3}>
-                        {projects.map(data => <ProjectElement element={data.data()}/>)}
-                    </Stack>
-
-                    <hr/>
+                    {projects.map(data => <ProjectElement element={data.data()}/>)}
                 </Card.Body>
             </Card>
         );
