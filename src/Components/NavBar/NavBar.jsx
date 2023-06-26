@@ -14,7 +14,7 @@ function NavBar() {
                 <div className={styles.navElements}>
 
                     <div className={styles.navLeft}>
-                        <BsNavbar.Brand href='/'>Porfolio</BsNavbar.Brand>
+                        <BsNavbar.Brand href='/'>Portfolio</BsNavbar.Brand>
                     </div>
 
                     <div className={styles.navRight}>
