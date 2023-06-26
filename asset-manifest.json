@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Joable/host-portfolio/static/css/main.8f977e40.css",
+    "main.js": "/Joable/host-portfolio/static/js/main.e72d3fb1.js",
+    "static/js/787.202b8111.chunk.js": "/Joable/host-portfolio/static/js/787.202b8111.chunk.js",
+    "static/media/profileImage.jpg": "/Joable/host-portfolio/static/media/profileImage.7bb400c337c71abf813a.jpg",
+    "static/media/bannerImage.jpeg": "/Joable/host-portfolio/static/media/bannerImage.576be15c2c9d8d377d65.jpeg",
+    "index.html": "/Joable/host-portfolio/index.html",
+    "main.8f977e40.css.map": "/Joable/host-portfolio/static/css/main.8f977e40.css.map",
+    "main.e72d3fb1.js.map": "/Joable/host-portfolio/static/js/main.e72d3fb1.js.map",
+    "787.202b8111.chunk.js.map": "/Joable/host-portfolio/static/js/787.202b8111.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f977e40.css",
+    "static/js/main.e72d3fb1.js"
+  ]
+}
