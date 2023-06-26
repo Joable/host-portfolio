@@ -25,8 +25,8 @@ function App() {
 
       <Routes>
 
-        <Route path="/" element={<ProfileInfo/>}/>
-        <Route path="/projects" element={<Projects/>}/>
+        <Route path="/host-portfolio/" element={<ProfileInfo/>}/>
+        <Route path="/host-portfolio/projects" element={<Projects/>}/>
 
       </Routes>
 
